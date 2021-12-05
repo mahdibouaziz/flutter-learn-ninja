@@ -1,126 +1,80 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-      home: Home(),
-    ));
+void main() => runApp(const MaterialApp(home: NinjaCard()));
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class NinjaCard extends StatelessWidget {
+  const NinjaCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: const Text("My First app"),
+        title: const Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-
-      //Center Widget
-      // body: const Center(
-      //   // child: Image(image: AssetImage("images/pic1.jpg")),
-      // //     child: Icon(
-      // //   Icons.account_tree,
-      // //   color: Colors.lightBlue,
-      // //   size: 30.0,
-      // // ),
-      //   child:ElevatedButton(
-      //       onPressed:null,
-      //       child: Text("Click me"),
-      //   ),
-      // ),
-
-      //Container widget
-      // body:Container(
-      //   padding:const EdgeInsets.all(20.0) ,
-      //   color: Colors.grey[400],
-      //   child:const Text('Hello'),
-      // ),
-
-      //Row widget
-      // body: Row(
-      //   mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   children:  <Widget>[
-      //     const Text("Hello world"),
-      //     ElevatedButton(
-      //       onPressed: (){},
-      //       child: const Text("Click ME"),
-      //     ),
-      //     Container(
-      //       color: Colors.cyan,
-      //       padding: EdgeInsets.all(30.0),
-      //       child: Text("Inside container"),
-      //     ),
-      //   ],
-      // ),
-
-      //Column widget
-      // body: Column(
-      //   mainAxisAlignment: MainAxisAlignment.end,
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   children: <Widget>[
-      //     Row(
-      //       children: const <Widget>[
-      //         Text("Hello"),
-      //         Text("World"),
-      //       ],
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(20.0),
-      //       color: Colors.cyan,
-      //       child: const Text("One"),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(30.0),
-      //       color: Colors.pinkAccent,
-      //       child: const Text("Two"),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(40.0),
-      //       color: Colors.amber,
-      //       child: const Text("Three"),
-      //     ),
-      //   ],
-      // ),
-
-      //Expanded Widget
-      body: Row(
-        children: <Widget>[
-          Expanded(
-              flex: 3,
-              child: Image.asset("images/pic1.jpg")),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.all(30.0),
-              color: Colors.cyan,
-              child: const Text('1'),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/ninja1.png'),
+                radius: 40.0,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.all(30.0),
-              color: Colors.pinkAccent,
-              child: const Text('2'),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[600],
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.all(30.0),
-              color: Colors.amber,
-              child: const Text('3'),
+            const Text("NAME:",
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                )),
+            const SizedBox(height: 10.0),
+            const Text("Chun-LI",
+                style: TextStyle(
+                  color: Colors.amberAccent,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            const SizedBox(height: 30.0),
+            const Text("CURRENT NINJA LEVEL:",
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                )),
+            const SizedBox(height: 10.0),
+            const Text("8",
+                style: TextStyle(
+                  color: Colors.amberAccent,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            const SizedBox(height: 30.0),
+            Row(
+              children: const <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 10.0),
+                Text(
+                  "chun.li@ninja.net",
+                  style: TextStyle(
+                      color: Colors.grey, letterSpacing: 1.0, fontSize: 18.0),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Text('click'),
-        backgroundColor: Colors.red[600],
+          ],
+        ),
       ),
     );
   }
