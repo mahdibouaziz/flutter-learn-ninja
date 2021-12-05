@@ -28,13 +28,30 @@ class Home extends StatelessWidget {
       //   ),
       // ),
 
-      body:Container(
-        padding:const EdgeInsets.all(20.0) ,
-        color: Colors.grey[400],
-        child:const Text('Hello'),
+      // body:Container(
+      //   padding:const EdgeInsets.all(20.0) ,
+      //   color: Colors.grey[400],
+      //   child:const Text('Hello'),
+      // ),
 
-
+      body: Row(
+        mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children:  <Widget>[
+          const Text("Hello world"),
+          ElevatedButton(
+            onPressed: (){},
+            child: const Text("Click ME"),
+          ),
+          Container(
+            color: Colors.cyan,
+            padding: EdgeInsets.all(30.0),
+            child: Text("Inside container"),
+          ),
+        ],
       ),
+
+
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
