@@ -15,6 +15,8 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
+
+      //Center Widget
       // body: const Center(
       //   // child: Image(image: AssetImage("images/pic1.jpg")),
       // //     child: Icon(
@@ -28,12 +30,14 @@ class Home extends StatelessWidget {
       //   ),
       // ),
 
+      //Container widget
       // body:Container(
       //   padding:const EdgeInsets.all(20.0) ,
       //   color: Colors.grey[400],
       //   child:const Text('Hello'),
       // ),
 
+      //Row widget
       // body: Row(
       //   mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
       //   crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,30 +55,64 @@ class Home extends StatelessWidget {
       //   ],
       // ),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      //Column widget
+      // body: Column(
+      //   mainAxisAlignment: MainAxisAlignment.end,
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: <Widget>[
+      //     Row(
+      //       children: const <Widget>[
+      //         Text("Hello"),
+      //         Text("World"),
+      //       ],
+      //     ),
+      //     Container(
+      //       padding: const EdgeInsets.all(20.0),
+      //       color: Colors.cyan,
+      //       child: const Text("One"),
+      //     ),
+      //     Container(
+      //       padding: const EdgeInsets.all(30.0),
+      //       color: Colors.pinkAccent,
+      //       child: const Text("Two"),
+      //     ),
+      //     Container(
+      //       padding: const EdgeInsets.all(40.0),
+      //       color: Colors.amber,
+      //       child: const Text("Three"),
+      //     ),
+      //   ],
+      // ),
+
+      //Expanded Widget
+      body: Row(
         children: <Widget>[
-          Row(
-            children: const <Widget>[
-              Text("Hello"),
-              Text("World"),
-            ],
+          Expanded(
+              flex: 3,
+              child: Image.asset("images/pic1.jpg")),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: const Text('1'),
+            ),
           ),
-          Container(
-            padding: const EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: const Text("One"),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.all(30.0),
+              color: Colors.pinkAccent,
+              child: const Text('2'),
+            ),
           ),
-          Container(
-            padding: const EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: const Text("Two"),
-          ),
-          Container(
-            padding: const EdgeInsets.all(40.0),
-            color: Colors.amber,
-            child: const Text("Three"),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: const Text('3'),
+            ),
           ),
         ],
       ),
