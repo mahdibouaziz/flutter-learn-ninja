@@ -34,24 +34,50 @@ class Home extends StatelessWidget {
       //   child:const Text('Hello'),
       // ),
 
-      body: Row(
-        mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+      // body: Row(
+      //   mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children:  <Widget>[
+      //     const Text("Hello world"),
+      //     ElevatedButton(
+      //       onPressed: (){},
+      //       child: const Text("Click ME"),
+      //     ),
+      //     Container(
+      //       color: Colors.cyan,
+      //       padding: EdgeInsets.all(30.0),
+      //       child: Text("Inside container"),
+      //     ),
+      //   ],
+      // ),
+
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children:  <Widget>[
-          const Text("Hello world"),
-          ElevatedButton(
-            onPressed: (){},
-            child: const Text("Click ME"),
+        children: <Widget>[
+          Row(
+            children: const <Widget>[
+              Text("Hello"),
+              Text("World"),
+            ],
           ),
           Container(
+            padding: const EdgeInsets.all(20.0),
             color: Colors.cyan,
-            padding: EdgeInsets.all(30.0),
-            child: Text("Inside container"),
+            child: const Text("One"),
+          ),
+          Container(
+            padding: const EdgeInsets.all(30.0),
+            color: Colors.pinkAccent,
+            child: const Text("Two"),
+          ),
+          Container(
+            padding: const EdgeInsets.all(40.0),
+            color: Colors.amber,
+            child: const Text("Three"),
           ),
         ],
       ),
-
-
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
